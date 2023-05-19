@@ -26,3 +26,15 @@ Connect the display's SCL pin to the Arduino's A5 pin (SCL).
 Make sure you have the necessary libraries installed for the MLX90614, MPX5010DP, MAX30102, and TFT display. These libraries provide functions to communicate with the respective sensors and display data.
 
 Include the necessary library headers in your Arduino code:
+#include <Wire.h>                        // Library for I2C communication
+#include <Adafruit_MLX90614.h>           // Library for MLX90614 sensor
+#include <Adafruit_Sensor.h>             // Library for MPX5010DP sensor
+#include <Adafruit_MAX3010x.h>           // Library for MAX30102 sensor
+#include <Adafruit_GFX.h>                // Base library for TFT display
+#include <Adafruit_LiquidCrystal.h>      // Library for I2C TFT display
+
+Initialize the sensor and TFT display objects in your code:
+Adafruit_MLX90614 mlx = Adafruit_MLX90614();                        // Create an instance of MLX90614
+Adafruit_MPX5010DP mpx = Adafruit_MPX5010DP(0);                     // Create an instance of MPX5010DP
+Adafruit_MAX30102 max30102;                                         // Create an instance of MAX30102
+Adafruit_LiquidCrystal lcd(0x27, 20
